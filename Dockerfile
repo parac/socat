@@ -1,3 +1,5 @@
 FROM alpine
-RUN apk update
-RUN apk add socat
+RUN apk update && \
+	apk upgrade && \
+	apk add --update-cache socat && \
+	rm /var/cache/apk/*
